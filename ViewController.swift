@@ -46,6 +46,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             cameraPicker.delegate = self
             
+            cameraPicker.allowsEditing = true
+            
+            present(cameraPicker, animated: true, completion: nil)
+        }
+        else
+        {
+            print("error")
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func oprnAlbum(_ sender: Any) {
+        let sourceType = UIImagePickerController.SourceType.photoLibrary
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera)
+        {
+            let cameraPicker = UIImagePickerController()
+            
+            cameraPicker.sourceType = sourceType
+            
+            cameraPicker.delegate = self
+            
+            cameraPicker.allowsEditing = true
+            
             present(cameraPicker, animated: true, completion: nil)
         }
         else
