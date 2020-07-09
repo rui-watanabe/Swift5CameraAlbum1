@@ -35,6 +35,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-
+    @IBAction func openCamera(_ sender: Any) {
+        let sourceType = UIImagePickerController.SourceType.camera
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera)
+        {
+            let cameraPicker = UIImagePickerController()
+            
+            cameraPicker.sourceType = sourceType
+            
+            cameraPicker.delegate = self
+            
+            present(cameraPicker, animated: true, completion: nil)
+        }
+        else
+        {
+            print("error")
+        }
+    }
+    
 }
 
