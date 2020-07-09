@@ -82,5 +82,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    //called when taked a photo or picked photo from album
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[.editedImage] as! UIImage
+        {
+            backImageView.image = pickedImage
+            
+            // savaed photo
+            UIImageWriteToSavedPhotosAlbum(pickedImage, self, nil, nil)
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
 }
 
