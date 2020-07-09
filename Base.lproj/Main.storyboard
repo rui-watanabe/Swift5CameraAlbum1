@@ -25,6 +25,7 @@
                                 <state key="normal" image="album"/>
                                 <connections>
                                     <action selector="oprnAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Fb-Ce-WTj"/>
+                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Zq-ie-qkN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSh-pK-2eo">
